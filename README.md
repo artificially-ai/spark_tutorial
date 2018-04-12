@@ -93,7 +93,7 @@ To make the editor use Scala highlight style, add the following line to the ```k
 
 This tutorial uses the USA Bureau of Transportation Statistics data. To download the same dataset, please use the link below:
 
-* [Bureau of Transportation Statistics]  (https://www.transtats.bts.gov/Tables.asp?DB_ID=110&DB_Name=Air%20Carrier%20Statistics%20%28Form%2041%20Traffic%29-%20%20U.S.%20Carriers&DB_Short_Name=Air%20Carriers)
+* [Bureau of Transportation Statistics](https://www.transtats.bts.gov/Tables.asp?DB_ID=110&DB_Name=Air%20Carrier%20Statistics%20%28Form%2041%20Traffic%29-%20%20U.S.%20Carriers&DB_Short_Name=Air%20Carriers)
 
 All the code is available in the spark_tutorial notebook. Hence, I will avoid typing code here, but only make a few comments on how to proceed to perform certain tasks.
 
