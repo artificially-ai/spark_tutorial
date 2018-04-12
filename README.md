@@ -173,7 +173,7 @@ Besides the ones above, there are also transformations that require two RDDs. Fo
 * cartesian
     * It return an RDD which contains the Cartesian product of the two, tuples of pairs.
 
-To see more Transformations and Actions, check the Spark documentation: https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.UnionRDD
+To see more Transformations and Actions, check the Spark [documentation](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.rdd.UnionRDD).
 
 And remember, those operations are lazy evaluated.
 
