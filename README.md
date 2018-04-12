@@ -108,7 +108,7 @@ All the code is available in the spark_tutorial notebook. Hence, I will avoid ty
       ```
     * That will make flightsDS a Resilient Distributed Dataset, our first RDD.
 
-For more details about the operations executed on top of this dataset, please refer to the notebook ```spark_tutorial```.
+For more details about the operations executed on top of this dataset, please refer to the notebook ```spark_basics```.
 
 #### Resilient Distributed Datasets
 
@@ -188,3 +188,26 @@ We will look into actions with more detail in the notebook, but here is a list o
 * aggregate
 * count
 * countByValue
+
+#### Data Analysis
+
+We will now move to some more advanced aspects of our adventure with Spark. To finally start with, let’s try to analyse the dataset we loaded from the Bureau of Transportation Statistics.
+
+During this section, we will write some Scala code to wrap the data, as in a POJO, and try out some new Actions and Transformations. There is a lot more Scala code in the ```data_analysis``` notebook. If you can’t follow it, please refer to my **scala_tutorial** repository.
+
+##### Things to keep an eye on:
+
+* Placeholders
+  * ```flightsDS.map(USACarrierParser.parse(_))```
+  * ```flightsParsed.map(_.distance)```
+
+The **_** is a placeholder. The code could have been written like this:
+
+* ```flightsDS.map(row => USACarrierParser.parse(row))```
+
+The ```reduce``` operation is also an Action. It iterates over all rows on all nodes and applies a function to their content.
+For example, in the reduce operation that we have performed in the notebook, it summed up all the distances in the RDD.
+
+* ```flightsDistance.reduce((x, y) => x + y)```
+
+If the RDD would have five rows and we had mapped it onto the distance column only, the reduce operation would sum up the row one and row two, then the result of the sum would be added to row 3 and the result to row four and the result to row five. I think you got the point.
